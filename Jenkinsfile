@@ -32,8 +32,8 @@ pipeline {
                     )
                 ]) {
                     // 在这个块内的所有步骤都可以访问到上面定义的环境变量
-                    echo "Username is $MY_USERNAME"
-                    echo "Password is $MY_PASSWORD" // Jenkins 会自动用 **** 屏蔽值
+                    echo "Username is $ORCHESTRATOR_HOST"
+                    echo "Password is $ORCH_TOKEN" // Jenkins 会自动用 **** 屏蔽值
                   
                     // 执行你的 Python 脚本
                     sh 'python3 chengdu_ziyang_tunnels.py'
