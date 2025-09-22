@@ -9,9 +9,9 @@ from urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Load environment variables from .env file
-load_dotenv(dotenv_path=".env")
-orchestrator_host = os.getenv("ORCHESTRATOR_HOST")
-auth_token = os.getenv("ORCH_TOKEN")
+#load_dotenv(dotenv_path=".env")
+orchestrator_host = os.environ.get("ORCHESTRATOR_HOST")
+auth_token = os.environ.get("ORCH_TOKEN")
 
 #TODO: Function to get the list of tunnels from targeted appliances
 def get_tunnel_list(source, dest_list):
