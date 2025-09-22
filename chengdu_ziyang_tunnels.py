@@ -10,8 +10,8 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Load environment variables from Jenkins
 #auth_token = os.environ.get('ORCH_TOKEN')
-orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
-auth_token = "d40fd7fe734f409c9e6bd9532e79a29b089c6a33d66141199cc6e92ba6ff711f8b08bf824bb04410abda5b2724e4ac18090e08b373d04e5eaf7c0c1871b4fef5"
+#orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
+ORCH_TOKEN = "d40fd7fe734f409c9e6bd9532e79a29b089c6a33d66141199cc6e92ba6ff711f8b08bf824bb04410abda5b2724e4ac18090e08b373d04e5eaf7c0c1871b4fef5"
 #TODO: Function to get the list of tunnels from targeted appliances
 def get_tunnel_list(source, dest_list):
     url = f"https://aligntech-orch-use1.silverpeak.cloud/gms/rest/tunnels2/physical?nePk={source}&limit=500"
