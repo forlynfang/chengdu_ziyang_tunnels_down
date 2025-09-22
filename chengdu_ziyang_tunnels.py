@@ -15,7 +15,7 @@ def get_tunnel_list(source, dest_list):
     url = f"https://aligntech-orch-use1.silverpeak.cloud/gms/rest/tunnels2/physical?nePk={source}&limit=500"
     headers = {
         "Accept": "application/json",
-        "X-Auth-Token": "d40fd7fe734f409c9e6bd9532e79a29b089c6a33d66141199cc6e92ba6ff711f8b08bf824bb04410abda5b2724e4ac18090e08b373d04e5eaf7c0c1871b4fef5",
+        "X-Auth-Token": 'd40fd7fe734f409c9e6bd9532e79a29b089c6a33d66141199cc6e92ba6ff711f8b08bf824bb04410abda5b2724e4ac18090e08b373d04e5eaf7c0c1871b4fef5',
     }
     try:
         response = requests.get(url, headers=headers, verify=False, timeout=30)
@@ -38,7 +38,7 @@ def get_tunnels_down(appliance_name, appliance_id, tunnel_list):
     url = f"https://{orchestrator_host}/gms/rest/tunnels2/physical?nePk={appliance_id}&limit=100&state=Down"
     headers = {
         "Accept": "application/json",
-        "X-Auth-Token": "d40fd7fe734f409c9e6bd9532e79a29b089c6a33d66141199cc6e92ba6ff711f8b08bf824bb04410abda5b2724e4ac18090e08b373d04e5eaf7c0c1871b4fef5",
+        "X-Auth-Token": 'd40fd7fe734f409c9e6bd9532e79a29b089c6a33d66141199cc6e92ba6ff711f8b08bf824bb04410abda5b2724e4ac18090e08b373d04e5eaf7c0c1871b4fef5',
     }
     ignored_list = ["to_Azure-West-US2-ECV-2_INET1-INET1", "to_GCP-USW4-ECV-1_INET1-INET1", "to_Azure-West-US2-ECV-2_INET2-INET1"]
     try:
