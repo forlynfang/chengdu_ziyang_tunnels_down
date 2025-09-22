@@ -10,12 +10,11 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Load environment variables from .env file
 #load_dotenv(dotenv_path=".env")
-orchestrator_host = os.environ.get("ORCHESTRATOR_HOST")
 auth_token = os.environ.get("ORCH_TOKEN")
 
 #TODO: Function to get the list of tunnels from targeted appliances
 def get_tunnel_list(source, dest_list):
-    url = f"https://{orchestrator_host}/gms/rest/tunnels2/physical?nePk={source}&limit=500"
+    url = f"https://aligntech-orch-use1.silverpeak.cloud/gms/rest/tunnels2/physical?nePk={source}&limit=500"
     headers = {
         "Accept": "application/json",
         "X-Auth-Token": auth_token,
