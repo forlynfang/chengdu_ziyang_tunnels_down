@@ -10,7 +10,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Load environment variables from .env file
 #load_dotenv(dotenv_path=".env")
-auth_token = os.environ.get("ORCH_TOKEN")
+auth_token = os.environ.get('ORCH_TOKEN')
 
 #TODO: Function to get the list of tunnels from targeted appliances
 def get_tunnel_list(source, dest_list):
