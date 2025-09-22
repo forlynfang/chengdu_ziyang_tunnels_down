@@ -15,7 +15,7 @@ def get_tunnel_list(source, dest_list):
     url = f"https://aligntech-orch-use1.silverpeak.cloud/gms/rest/tunnels2/physical?nePk={source}&limit=500"
     headers = {
         "Accept": "application/json",
-        "X-Auth-Token": auth_token,
+        "X-API-Key": auth_token,
     }
     try:
         response = requests.get(url, headers=headers, verify=False, timeout=30)
