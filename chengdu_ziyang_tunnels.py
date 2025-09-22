@@ -8,9 +8,8 @@ from urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-# Load environment variables from .env file
-#load_dotenv(dotenv_path=".env")
-auth_token = os.getenv("ORCH_TOKEN")
+# Load environment variables from Jenkins
+auth_token = os.environ.get('ORCH_TOKEN')
 #TODO: Function to get the list of tunnels from targeted appliances
 def get_tunnel_list(source, dest_list):
     url = f"https://aligntech-orch-use1.silverpeak.cloud/gms/rest/tunnels2/physical?nePk={source}&limit=500"
