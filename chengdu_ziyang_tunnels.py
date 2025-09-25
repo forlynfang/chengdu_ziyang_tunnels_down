@@ -11,6 +11,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 # Load environment variables from Jenkins
 orchestrator_host = "aligntech-orch-use1.silverpeak.cloud"
 auth_token = os.environ.get('ORCH_TOKEN')
+teams_webhook_url = os.environ.get('TEAMS_WEBHOOK')
 #TODO: Function to get the list of tunnels from targeted appliances
 def get_tunnel_list(source, dest_list):
     url = f"https://{orchestrator_host}/gms/rest/tunnels2/physical?nePk={source}&limit=500"
@@ -55,7 +56,6 @@ def get_tunnels_down(appliance_name, appliance_id, tunnel_list):
 
             elif tunnel_name in tunnel_list:
                 print(f"WARNING: On {appliance_name}, the tunnel {tunnel_name} is DOWN.")
-                teams_webhook_url = "https://aligntech.webhook.office.com/webhookb2/7ed9a6c7-e811-4e71-956c-9e54f8b7d705@9ac44c96-980a-481b-ae23-d8f56b82c605/JenkinsCI/9ecff2f044b44cfcae37b0376ecd1540/9d21b513-f4ee-4b3b-995c-7a422a087a6c/V2-0LzN76qekmVrAPO1b9pX-4MwxVsHKo7lbMnV_iHFb81"
                 message = {
                 "text": f"WARNING: On {appliance_name}, the tunnel {tunnel_name} is DOWN."
                 }
